@@ -1,0 +1,1 @@
+with open('i.txt', 'r') as f: print(sum([((1 + x[1] - ord('X')) + (6 if (x[1] - x[0]) % 3 == 0 else 3 if x[1] - x[0] == 23 else 0)) for x in [[ord(c) for c in l.split()] for l in f]]))
