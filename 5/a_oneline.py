@@ -1,0 +1,3 @@
+with open('i.txt', 'r') as f: arrs_per_line = [[[m[1]] if m.strip() != '' else [] for i, m in enumerate(__import__('re').findall("(\s{3}|\[.\])\s", line))] for line in f if len(__import__('re').findall("(\s{3}|\[.\])\s", line)) > 0]; arrs = [[item for list_of_items in [arrs_per_line[j][i] for j in range(len(arrs_per_line))] for item in list_of_items][::-1] for i in range(len(arrs_per_line[0]))]
+with open('i.txt', 'r') as f: print(''.join([arr[-1] for arr in [arrs, [[[arrs[int(m[2]) - 1].append(arrs[int(m[1]) - 1].pop()) for i in range(int(m[0]))] for m in __import__('re').findall("move (\d*) from (\d*) to (\d*)", line)] for line in f]][0]]))
+# SBPQRSCDF
